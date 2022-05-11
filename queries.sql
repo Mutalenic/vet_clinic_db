@@ -37,3 +37,8 @@ ROLLBACK;
 --verify that changes were rolledback
 SELECT * FROM animals;
 
+/*Inside a transaction*/
+--Update species column to digimon for all animals that have a name ending in 'mon'. 
+UPDATE animals
+SET species = 'digimon'
+WHERE name LIKE '%mon';
