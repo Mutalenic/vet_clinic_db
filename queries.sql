@@ -60,19 +60,19 @@ ROLLBACK;
 --verify that changes were rolledback
 SELECT * FROM animals;
 
--- Delete all animals born after Jan 1st, 2022.
+--Delete all animals born after Jan 1st, 2022.
 BEGIN;
 DELETE FROM animals
 WHERE date_of_birth > '2022-01-01';
 
--- Create a savepoint for the transaction.
+--Create a savepoint for the transaction.
 SAVEPOINT deleteAnimalsBornAfterJan2022;
 
--- Update all animals' weight to be their weight multiplied by -1.
+--Update all animals' weight to be their weight multiplied by -1.
 UPDATE animals
 SET weight_kg = weight_kg * -1;
 
--- Rollback to the savepoint  commit
+--Rollback to the savepoint  commit
 ROLLBACK TO deleteAnimalsBornAfterJan2022;
 
 --Update all animals' weights that are negative to be their weight multiplied by -1.
@@ -82,3 +82,23 @@ WHERE weight_kg < 0;
 
 --commit
 COMMIT;
+
+
+--Count number of animals 
+SELECT COUNT(*) FROM animals;
+
+--Count number of animals that have not attempted escape 
+SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
+
+--Avarage weight of animals 
+SELECT AVG(weight_kg) FROM animals;
+
+--Sum of escape attempts and compare between neutered and non-neutered
+SELECT neutered, SUM(escape_attempts) FROM animals GROUP BY neutered;
+
+--Minimum and maximum weights of each type of animal
+SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
+
+--Average number of escape attempts per animal type of those born between 1990 and 2000 
+SELECT species, AVG(escape_attempts) FROM animals WHERE date_of_birth 
+BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
