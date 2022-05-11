@@ -28,3 +28,12 @@ BEGIN;
 UPDATE animals
 SET species = 'unspecified';
 
+--Verify that change was made
+SELECT * FROM animals;
+
+--rollback changes
+ROLLBACK;
+
+--verify that changes were rolledback
+SELECT * FROM animals;
+
