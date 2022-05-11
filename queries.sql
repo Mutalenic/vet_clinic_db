@@ -48,3 +48,13 @@ UPDATE animals
 SET species = 'pokemon'
 WHERE species IS NULL;
 COMMIT;
+
+--Verify that change was made and persists after commit.
+SELECT * FROM animals;
+
+--delete all records in the animals table
+BEGIN;
+DELETE from animals;
+ROLLBACK;
+--verify that changes were rolledback
+SELECT * FROM animals;
