@@ -61,3 +61,7 @@ UPDATE animals
 set owner_id = (SELECT id from owners where full_name = 'Bob')
 WHERE name IN ('Devimon','Plantmon');
 
+--Melody Pond owns Charmander,Squirtle and Blossom
+UPDATE animals
+set owner_id = (SELECT id from owners where full_name = 'Melody Pond')
+WHERE name IN ('Charmander','Squirtle','Blossom');
