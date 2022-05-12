@@ -21,4 +21,10 @@ full_name VARCHAR(100) NOT NULL,
 age INT NOT NULL
 );
 
+--species table
+CREATE TABLE species (
+    id SERIAL PRIMARY KEY NOT NULL, 
+    name VARCHAR(100) NOT NULL
+);
+
 
