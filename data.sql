@@ -46,7 +46,13 @@ UPDATE animals
 set species_id = (SELECT id from species where name = 'Pokemon')
 WHERE species_id IS NULL;
 
---Modify animals table to include owner information
+--Modify animals table to include owner information.Sam Smith set to own Agumon
 UPDATE animals
 set owner_id = (SELECT id from owners where full_name = 'Sam Smith')
 WHERE name='Agumon';
+
+--Jennifer Orwell owns Gabumon and Pikachu.
+UPDATE animals
+set owner_id = (SELECT id from owners where full_name = 'Jennifer Orwell')
+WHERE name IN ('Gabumon','Pikachu');
+
