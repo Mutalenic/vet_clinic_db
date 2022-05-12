@@ -20,7 +20,7 @@ VALUES
 ('Blossom', '1998-10-13', 3, true, 17),
 ('Dito', '2022-05-14', 4, true, 22);
 
--- Insert data into the owners table
+--Insert data into the owners table
 INSERT INTO owners(full_name, age)
 VALUES 
 ('Sam Smith', 34),
@@ -36,7 +36,12 @@ VALUES
 ('Pokemon'),
 ('Digimon');
 
--- Modify inserted animals so it includes the species_id value
+--Modify species_id column in animals table so it includes the species_id value in animals ending with 'mon'
 UPDATE animals
-    set species_id = (SELECT id from species where name = 'Digimon')
-    WHERE name LIKE '%mon';
+set species_id = (SELECT id from species where name = 'Digimon')
+WHERE name LIKE '%mon';
+
+--Modify species_id column in animals table so it includes the species_id value in animals not ending with 'mon'
+UPDATE animals
+set species_id = (SELECT id from species where name = 'Pokemon')
+WHERE species_id IS NULL;
