@@ -35,3 +35,8 @@ INSERT INTO species(name)
 VALUES
 ('Pokemon'),
 ('Digimon');
+
+-- Modify inserted animals so it includes the species_id value
+UPDATE animals
+    set species_id = (SELECT id from species where name = 'Digimon')
+    WHERE name LIKE '%mon';
