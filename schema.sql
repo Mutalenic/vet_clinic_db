@@ -30,3 +30,9 @@ CREATE TABLE species (
 -- Remove column species
 ALTER TABLE animals DROP species;
 
+-- Add column species_id which is a foreign key referencing species table
+ALTER TABLE animals 
+    ADD COLUMN species_id INT,
+    ADD CONSTRAINT fk_species
+    FOREIGN KEY (species_id)
+    REFERENCES species(id);
