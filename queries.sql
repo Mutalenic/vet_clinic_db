@@ -108,3 +108,8 @@ BETWEEN '1990-01-01' AND '2000-12-31' GROUP BY species;
 SELECT name FROM owners
 JOIN animals ON owners.id= animals.owner_id 
 WHERE full_name='Melody Pond';
+
+--List of all animals that are pokemon(type Pokemon)
+SELECT animals.name FROM species 
+JOIN animals ON species.id = animals.species_id 
+WHERE species.name = 'Pokemon';
