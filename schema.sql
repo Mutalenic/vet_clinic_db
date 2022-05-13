@@ -43,3 +43,12 @@ ADD COLUMN owner_id INT,
 ADD CONSTRAINT fk_owners
 FOREIGN KEY (owner_id)
 REFERENCES owners(id);
+
+--Create a table named vets 
+CREATE TABLE vets (
+id SERIAL PRIMARY KEY NOT NULL,
+name VARCHAR(100) NOT NULL,          
+age int not null,   
+date_of_graduation date                 
+);
+
