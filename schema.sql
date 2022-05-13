@@ -52,3 +52,10 @@ age int not null,
 date_of_graduation date                 
 );
 
+-- Create a "join table" called specializations to handle relationship between animals and vets
+CREATE TABLE specializations (
+vets_id INT NOT NULL,
+species_id INT NOT NULL,
+CONSTRAINT fk_species FOREIGN KEY (species_id) REFERENCES species(id),
+CONSTRAINT fk_vets  FOREIGN KEY (vets_id) REFERENCES vets(id)             
+);
