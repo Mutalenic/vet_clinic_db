@@ -43,3 +43,28 @@ ADD COLUMN owner_id INT,
 ADD CONSTRAINT fk_owners
 FOREIGN KEY (owner_id)
 REFERENCES owners(id);
+
+--Create a table named vets 
+CREATE TABLE vets (
+id SERIAL PRIMARY KEY NOT NULL,
+name VARCHAR(100) NOT NULL,          
+age int not null,   
+date_of_graduation date                 
+);
+
+-- Create a "join table" called specializations to handle relationship between species and vets
+CREATE TABLE specializations (
+vets_id INT NOT NULL,
+species_id INT NOT NULL,
+CONSTRAINT fk_species FOREIGN KEY (species_id) REFERENCES species(id),
+CONSTRAINT fk_vets  FOREIGN KEY (vets_id) REFERENCES vets(id)             
+);
+
+-- Create a "join table" called visits to handle relationship between animals and vets
+CREATE TABLE visits (
+vets_id INT,
+animals_id INT,
+date_visit DATE ,
+CONSTRAINT fk_animals FOREIGN KEY (animals_id) REFERENCES animals(id),
+CONSTRAINT fk_vets  FOREIGN KEY (vets_id) REFERENCES vets(id)             
+);
