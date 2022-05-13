@@ -123,7 +123,7 @@ VALUES
 ((SELECT id FROM animals WHERE name = 'Gabumon'),
 (SELECT id FROM vets WHERE name = 'Jack Harkness'),'2021-02-02');
 
---Pikachu visited Maisy Smith on Jan 5th, 2020,Mar 8th, 2020,May 14th, 2020
+--Pikachu visit Maisy Smith on Jan 5th, 2020,Mar 8th, 2020,May 14th, 2020
 INSERT INTO visits (animals_id, vets_id, date_visit)
 VALUES ((SELECT id FROM animals WHERE name = 'Pikachu'),
 (SELECT id FROM vets WHERE name = 'Maisy Smith'),'2020-01-05');
@@ -135,3 +135,9 @@ VALUES ((SELECT id FROM animals WHERE name = 'Pikachu'),
 INSERT INTO visits (animals_id, vets_id, date_visit)
 VALUES ((SELECT id FROM animals WHERE name = 'Pikachu'),
 (SELECT id FROM vets WHERE name = 'Maisy Smith'),'2020-05-14');
+
+--Devimon visit Stephanie Mendez on May 4th, 2021.
+INSERT INTO visits (animals_id, vets_id, date_visit)
+VALUES
+((SELECT id FROM animals WHERE name = 'Devimon'),
+(SELECT id FROM vets WHERE name = 'Stephanie Mendez'),'2021-05-04');
