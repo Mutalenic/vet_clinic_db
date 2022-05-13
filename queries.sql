@@ -160,3 +160,14 @@ SELECT COUNT (animals.name) FROM animals
 JOIN visits ON animals.id = visits.animals_id
 JOIN vets ON vets.id = visits.vets_id
 WHERE vets.name = 'Stephanie Mendez';
+
+--List all vets and their specialties, including vets with no specialties.
+SELECT vets.name, species.name  FROM species 
+JOIN specializations ON species.id = specializations.species_id
+RIGHT JOIN vets ON vets.id = specializations.vets_id;
+
+--List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020.
+SELECT animals.name, visits.date_visit FROM animals
+JOIN visits ON animals.id = visits.animals_id
+JOIN vets ON vets.id = visits.vets_id
+WHERE vets.name = 'Stephanie Mendez' AND visits.date_visit BETWEEN 'April 1, 2020' AND 'Aug 30, 2020';
