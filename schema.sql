@@ -62,9 +62,9 @@ CONSTRAINT fk_vets  FOREIGN KEY (vets_id) REFERENCES vets(id)
 
 -- Create a "join table" called visits to handle relationship between animals and vets
 CREATE TABLE visits (
-    vets_id INT,
-    animals_id INT,
-    date_visit DATE ,
-    CONSTRAINT fk_animals FOREIGN KEY (animals_id) REFERENCES animals(id),
-    CONSTRAINT fk_vets  FOREIGN KEY (vets_id) REFERENCES vets(id)             
+vets_id INT,
+animals_id INT,
+date_visit DATE ,
+CONSTRAINT fk_animals FOREIGN KEY (animals_id) REFERENCES animals(id),
+CONSTRAINT fk_vets  FOREIGN KEY (vets_id) REFERENCES vets(id)             
 );

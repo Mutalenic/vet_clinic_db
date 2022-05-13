@@ -103,3 +103,10 @@ INSERT INTO specializations (species_id, vets_id)
 VALUES
 ((SELECT id FROM species WHERE name = 'Digimon'),
 (SELECT id FROM vets WHERE name = 'Jack Harkness'));
+
+/* VISITS DATA */
+--Agumon visit William Tatcher on May 24th, 2020.
+INSERT INTO visits (animal_id, vets_id, date_visit)
+VALUES 
+((SELECT id FROM animals WHERE name = 'Agumon'),
+(SELECT id FROM vets WHERE name = 'William Tatcher'),'May 24, 2020');
