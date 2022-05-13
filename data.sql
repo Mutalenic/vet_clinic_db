@@ -183,3 +183,24 @@ INSERT INTO visits (animals_id, vets_id, date_visit)
 VALUES
 ((SELECT id FROM animals WHERE name = 'Angemon'),
 (SELECT id FROM vets WHERE name = 'Jack Harkness'),'2020-11-04');
+
+/*Boarmon visit Maisy Smith on Jan 24th, 2019, May 15th, 2019,Feb 27th, 2020,Aug 3rd, 2020*/
+INSERT INTO visits (animals_id, vets_id, date_visit)
+VALUES
+((SELECT id FROM animals WHERE name = 'Boarmon'),
+(SELECT id FROM vets WHERE name = 'Maisy Smith'),'2019-01-24');
+
+INSERT INTO visits (animals_id, vets_id, date_visit)
+VALUES
+((SELECT id FROM animals WHERE name = 'Boarmon'),
+(SELECT id FROM vets WHERE name = 'Maisy Smith'),'2019-05-15');
+
+INSERT INTO visits (animals_id, vets_id, date_visit)
+VALUES
+((SELECT id FROM animals WHERE name = 'Boarmon'),
+(SELECT id FROM vets WHERE name = 'Maisy Smith'),'2020-02-27');
+
+INSERT INTO visits (animals_id, vets_id, date_visit)
+VALUES
+((SELECT id FROM animals WHERE name = 'Boarmon'),
+(SELECT id FROM vets WHERE name = 'Maisy Smith'),'2020-08-03');
