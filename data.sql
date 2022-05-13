@@ -172,4 +172,8 @@ VALUES
 ((SELECT id FROM animals WHERE name = 'Squirtle'),
 (SELECT id FROM vets WHERE name = 'Stephanie Mendez'),'2019-09-29');
 
---
+--Angemon visit Jack Harkness on Oct 3rd, 2020.
+INSERT INTO visits (animals_id, vets_id, date_visit)
+VALUES
+((SELECT id FROM animals WHERE name = 'Angemon'),
+(SELECT id FROM vets WHERE name = 'Jack Harkness'),'2020-10-03');
