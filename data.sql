@@ -106,13 +106,19 @@ VALUES
 
 /* VISITS DATA */
 --Agumon visit William Tatcher on May 24th, 2020.
-INSERT INTO visits (animal_id, vets_id, date_visit)
+INSERT INTO visits (animals_id, vets_id, date_visit)
 VALUES 
 ((SELECT id FROM animals WHERE name = 'Agumon'),
 (SELECT id FROM vets WHERE name = 'William Tatcher'),'2020-05-24');
 
 --Agumon visit Stephanie Mendez on Jul 22th, 2020.
-INSERT INTO visits (animal_id, vets_id, date_visit)
+INSERT INTO visits (animals_id, vets_id, date_visit)
 VALUES 
 ((SELECT id FROM animals WHERE name = 'Agumon'),
 (SELECT id FROM vets WHERE name = 'Stephanie Mendez'),'2020-07-22');
+
+--Gabumon visit Jack Harkness on Feb 2nd, 2021.
+INSERT INTO visits (animals_id, vets_id, date_visit)
+VALUES
+((SELECT id FROM animals WHERE name = 'Gabumon'),
+(SELECT id FROM vets WHERE name = 'Jack Harkness'),'Feb 2, 2021');
