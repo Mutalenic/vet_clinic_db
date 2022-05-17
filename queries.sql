@@ -217,3 +217,6 @@ CREATE INDEX visits_asc ON visits(animals_id ASC);
 
 -- Add index visits_vets_asc to the db for more performence
 CREATE INDEX visits_vets_asc ON visits(vets_id ASC);
+
+-- Add index visits_vets_asc to the db for more performence
+CREATE INDEX email_asc ON owners(email ASC);
