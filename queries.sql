@@ -210,3 +210,7 @@ WHERE vets.name = 'Maisy Smith'
 GROUP BY (species.name)
 ORDER BY COUNT (species.name) DESC
 Limit 1;
+
+
+-- Add index visits_asc to the db for more performence
+CREATE INDEX visits_asc ON visits(animals_id ASC);
